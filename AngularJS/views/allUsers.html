@@ -1,0 +1,20 @@
+﻿<h2>Employee Details</h2>
+<div class="jumbotron">
+    <div class="table-responsive">
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr ng-repeat="user in allusers">
+                    <th>{{user.UserId}}</th>
+                    <th>{{user.UserName}}</th>
+                    <th>{{user.UserNIC}}</th>
+                    <th>{{user.UserEmail}}</th>
+                    <th>{{user.UserRole}}</th>
+                </tr>
+            </thead>
+            
+            <tbody></tbody>
+        </table>
+        
+    </div>
+</div>

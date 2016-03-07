@@ -1,0 +1,38 @@
+﻿<h2>Add New Employee</h2>
+<div class="jumbotron">
+    <form ng-submit="createUser()" role="form">
+        <div class="form-group">
+            <label for="name">User Name:</label>
+            <input ng-model="fields.name" type="text" class="form-control" id="name" placeholder="Enter User Name">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input ng-model="fields.password" type="password" class="form-control" id="pwd" placeholder="Enter password">
+        </div>
+        <div class="form-group">
+            <label for="NIC">NIC No:</label>
+            <input ng-model="fields.nic" type="text" class="form-control" id="NIC" placeholder="Enter National Identity Card Number">
+        </div>
+        <div class="dropdown">
+            <label for="Dname">Department Name:</label>
+            <select ng-model="fields.dname" class="form-control">
+                <option selected="selected">Assign a department</option>
+
+            </select>
+        </div><br />
+        <div class="dropdown">
+            <label for="Role">Role:</label>
+            <select ng-model="fields.role" class="form-control">
+                <option selected="selected">Select the role</option>
+                <option value="admin">Admin</option>
+                <option value="manager">Manager</option>
+                <option value="viewer">Viewer</option>
+                <option value="normal users">Normal Employee</option>
+            </select>
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
