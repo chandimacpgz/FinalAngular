@@ -10,6 +10,7 @@
     function dashboardController($scope, $location) {
         $scope.viewUsers = function () {
             $location.path('/allusers');
+
         }
     }
 })();
