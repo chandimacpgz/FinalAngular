@@ -37,7 +37,7 @@ app.service('AuthenticationService', function ($http, $rootScope) {
         }
 
         function viewAllUsers() {
-            return $http.get('http://localhost:33090/api/Users/').then(handleSuccess, handleError('Error getting all users'));
+            return $http.get('http://emp.azurewebsites.net/api/users').then(handleSuccess, handleError('Error getting all users'));
         }
 
         function viewSingleUser(id) {
