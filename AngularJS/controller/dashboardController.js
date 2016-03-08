@@ -20,7 +20,6 @@
 
 
         if (2 == data) {
-
             eadd.style.display = 'none';
             dadd.style.display = 'none';
         } else if (3 == data) {

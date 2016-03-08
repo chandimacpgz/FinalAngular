@@ -31,7 +31,7 @@
         
 
         $scope.deleteSingleDept = function (deptid) {
-            deptService.deleteSingleDept(deptid).then(function (state) {
+            deptService.deleteSingleDepartment(deptid).then(function (state) {
                 $scope.result = state;
             });
         }
