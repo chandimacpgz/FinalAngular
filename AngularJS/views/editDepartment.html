@@ -1,0 +1,24 @@
+﻿<h2>Department Details</h2>
+<div class="jumbotron">
+    <div class="table-responsive">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr ng-repeat="dept in alldepts">
+                    <th>{{dept.DeptId}}</th>
+                    <th>{{dept.DeptName}}</th>
+                    <th>{{dept.DeptLocation}}</th>
+                    <td>
+                        <a href="#/EditThisDept/{{dept.DeptId}}">Edit</a>
+                    </td>
+                    <td>
+                        <input type="button" value="Delete" class="btn btn-primary" ng-click="deleteSingleDept(dept.DeptId)" />
+                    </td>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+
+    </div>
+</div>
