@@ -1,10 +1,26 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿<h2>Employee Details</h2>
+<div class="jumbotron">
+    <div class="table-responsive">
 
-</body>
-</html>
+        <table class="table table-bordered">
+            <thead>
+                <tr ng-repeat="user in allusers">
+                    <th>{{user.UserId}}</th>
+                    <th>{{user.UserName}}</th>
+                    <th>{{user.UserNIC}}</th>
+                    <th>{{user.UserEmail}}</th>
+                    <th>{{user.UserRole}}</th>
+                    <td>
+                        <a href="#/EditThisUser/{{user.UserId}}">Edit</a>
+                    </td>
+                    <td>
+                        <input type="button" value="Delete" class="btn btn-primary" ng-click="deleteSingleUser(user.UserId)" />
+                    </td>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+
+    </div>
+</div>

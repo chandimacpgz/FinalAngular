@@ -921,6 +921,9 @@
     <Content Include="views\admin.html" />
     <Content Include="views\allUsers.html" />
     <Content Include="views\createUser.html" />
+    <Content Include="views\editDepartment.html" />
+    <Content Include="views\EditThisDept.html" />
+    <Content Include="views\EditThisUser.html" />
     <Content Include="views\editUser.html" />
     <Content Include="views\login.html" />
     <Content Include="views\singleUser.html" />

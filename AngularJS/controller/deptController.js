@@ -5,38 +5,41 @@
         .module('Application')
         .controller('deptController', deptController);
 
-    deptController.$inject = ['$location', '$http', 'deptService' , '$scope'];
+    deptController.$inject = ['$location', '$scope', 'deptService', '$routeParams'];
 
-    function deptController($location, $http, deptService, $scope) {
+    function deptController($location, $scope,deptService, $routeParams) {
    
 
             deptService.viewAllDepartments().then(function (state) {
-                $scope.alldepts = state.data;
+                $scope.alldepts = state;
             });
 
 
 
-        $scope.createUser = function (user) {
-            deptService.createUser(user).then(function (state) {
+        $scope.createDepartment = function () {
+
+           
+            deptService.createDepartment($scope.data).then(function (state) {
                 $scope.result = state.data;
             });
         }
 
-        $scope.viewSingleDepartment = function (depname) {
-            deptService.viewSingleDepartment(depname).then(function (state) {
-                $scope.singleDepartment = state.data;
+
+        deptService.viewSingleDepartment($routeParams.DeptId).then(function (state) {
+            $scope.singleDept = state;
+        });
+        
+
+        $scope.deleteSingleDept = function (deptid) {
+            deptService.deleteSingleDept(deptid).then(function (state) {
+                $scope.result = state;
             });
         }
 
-        $scope.deleteSingleUser = function (username) {
-            deptService.deleteSingleUser(username).then(function (state) {
-                socpe.result = state.data;
-            });
-        }
-
-        $scope.updateSingleUser = function (user) {
-            $scope.result = deptService.updateSingleUser(user).then(function (state) {
-                socpe.result = state.data;
+        $scope.updateSingleDept = function () {
+            var dept = $scope.singleDept;
+            deptService.updateSingleDept(dept).then(function (state) {
+                $scope.result = state;
             });
         }
 

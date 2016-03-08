@@ -15,13 +15,17 @@ app.config(['$routeProvider', '$locationProvider',
             templateUrl: 'views/login.html',
             controller: 'loginController'
         }).
-        when('/dashboard', {
-          templateUrl: 'views/admin.html',
-          controller: 'dashboardController'
+        when('/dashboard/:id', {
+            templateUrl: 'views/admin.html',
+            controller: 'dashboardController'
         }).
           when('/allusers', {
               templateUrl: 'views/allUsers.html',
               controller: 'userController'
+          }).
+          when('/addDepartment', {
+              templateUrl: 'views/addDepartment.html',
+              controller: 'deptController'
           }).
           when('/adduser', {
               templateUrl: 'views/createUser.html',
@@ -31,6 +35,23 @@ app.config(['$routeProvider', '$locationProvider',
                templateUrl: 'views/viewAllDepartments.html',
                controller: 'deptController'
            }).
+           when('/edituser', {
+               templateUrl: 'views/editUser.html',
+               controller: 'userController'
+           }).
+          when('/editDepartment', {
+              templateUrl: 'views/editDepartment.html',
+              controller: 'deptController'
+          }).
+          when('/EditThisUser/:UserId', {
+              templateUrl: 'views/EditThisUser.html',
+              controller: 'userController'
+          }).
+          when('/EditThisDept/:DeptId', {
+              templateUrl: 'views/EditThisDept.html',
+              controller: 'deptController'
+          }).
+          
        otherwise({
             redirectTo: '/'
         });
