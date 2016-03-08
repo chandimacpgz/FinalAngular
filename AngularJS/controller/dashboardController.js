@@ -12,5 +12,17 @@
             $location.path('/allusers');
 
         }
+
+        $scope.viewDepartments = function () {
+            $location.path('/alldept');
+
+        }
+
+        $scope.addUser = function () {
+            $location.path('/adduser');
+        }
+
+
+
     }
 })();

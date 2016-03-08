@@ -9,12 +9,12 @@
 
     function deptController($location, $http, deptService, $scope) {
    
-        $scope.viewAllDepartments = function () {
+
             deptService.viewAllDepartments().then(function (state) {
                 $scope.alldepts = state.data;
-
             });
-        }
+
+
 
         $scope.createUser = function (user) {
             deptService.createUser(user).then(function (state) {

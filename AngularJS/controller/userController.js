@@ -9,14 +9,19 @@
 
     function userController($location, $scope, userService) {
 
+            userService.viewAllUsers().then(function (state) {
+                        $scope.allusers = state.data;
+            });
 
-        userService.viewAllUsers().then(function (state) {
-            $scope.allusers = state.data;
-        });
-     
-        $scope.createUser = function () {
-            var user = $scope.fileds;
-            userService.createUser(user).then(function (state) {
+
+
+
+
+          $scope.createUser = function () {
+   
+           
+            
+              userService.createUser($scope.fields).then(function (state) {
                 $scope.result = state;
             });
         }

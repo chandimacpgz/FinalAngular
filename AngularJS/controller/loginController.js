@@ -10,7 +10,6 @@
     function loginController($location , $scope) {
         $scope.login = function () {
             $location.path('/dashboard');
-
         }
     }
 })();

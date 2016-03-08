@@ -23,6 +23,14 @@ app.config(['$routeProvider', '$locationProvider',
               templateUrl: 'views/allUsers.html',
               controller: 'userController'
           }).
+          when('/adduser', {
+              templateUrl: 'views/createUser.html',
+              controller: 'userController'
+          }).
+           when('/alldept', {
+               templateUrl: 'views/viewAllDepartments.html',
+               controller: 'deptController'
+           }).
        otherwise({
             redirectTo: '/'
         });

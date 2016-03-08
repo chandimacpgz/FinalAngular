@@ -33,7 +33,14 @@ app.service('AuthenticationService', function ($http, $rootScope) {
         return service;
 
         function createUser(user) {
-            return $http.post('/api/createUser', { user: user }).then(handleSuccess, handleError('Error Creating single user'));
+           
+            return $http({
+                url: 'http://emp.azurewebsites.net/api/users',
+                method: "POST",
+                data: user,
+                headers: { 'Content-Type': 'application/json' }
+            }).then(handleSuccess, handleError('Error Creating single user'));
+
         }
 
         function viewAllUsers() {
@@ -53,9 +60,6 @@ app.service('AuthenticationService', function ($http, $rootScope) {
         }
 
 
-
-        // custom functions
-
         function handleSuccess(res) {
             return res;
         }
@@ -65,9 +69,6 @@ app.service('AuthenticationService', function ($http, $rootScope) {
                 return { success: false, message: error };
             };
         }
-
-
-
 
 
     }
@@ -96,7 +97,7 @@ app.service('AuthenticationService', function ($http, $rootScope) {
         }
 
         function viewAllDepartments() {
-            return $http.get('http://localhost:33090/api/Departments/').then(handleSuccess, handleError('Error getting all Departments'));
+            return $http.get('http://emp.azurewebsites.net/api/Departments/').then(handleSuccess, handleError('Error getting all Departments'));
         }
 
         function viewSingleDepartment(id) {
