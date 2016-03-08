@@ -18,9 +18,6 @@
 
 
           $scope.createUser = function () {
-   
-           
-            
               userService.createUser($scope.fields).then(function (state) {
                 $scope.result = state;
             });

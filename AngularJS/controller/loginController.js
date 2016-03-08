@@ -23,7 +23,7 @@
                         } else if ("manager" == temp) {
                             $location.path('/dashboard/2');
                             return 0;
-                        } else if ("user") {
+                        } else if ("user" == temp) {
                             $location.path('/dashboard/3');
                             return 0;
                         }
