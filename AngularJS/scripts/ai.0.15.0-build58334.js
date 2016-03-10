@@ -581,7 +581,7 @@ var AI;
             this.userAgent = "ai.user.userAgent";
             this.userId = "ai.user.id";
             this.userStoreRegion = "ai.user.storeRegion";
-            this.userAuthUserId = "ai.user.authUserId";
+            this.userAuthuserId = "ai.user.authuserId";
             this.userAnonymousUserAcquisitionDate = "ai.user.anonUserAcquisitionDate";
             this.userAuthenticatedUserAcquisitionDate = "ai.user.authUserAcquisitionDate";
             this.sampleRate = "ai.sample.sampleRate";
@@ -933,13 +933,13 @@ var Microsoft;
                         }
                     }
                 }
-                User.prototype.setAuthenticatedUserContext = function (authenticatedUserId, accountId) {
-                    var isInvalidInput = !this.validateUserInput(authenticatedUserId) || (accountId && !this.validateUserInput(accountId));
+                User.prototype.setAuthenticatedUserContext = function (authenticateduserId, accountId) {
+                    var isInvalidInput = !this.validateUserInput(authenticateduserId) || (accountId && !this.validateUserInput(accountId));
                     if (isInvalidInput) {
                         ApplicationInsights._InternalLogging.throwInternalUserActionable(1 /* WARNING */, "Setting auth user context failed. " + "User auth/account id should be of type string, and not contain commas, semi-colons, equal signs, spaces, or vertical-bars.");
                         return;
                     }
-                    this.authenticatedId = authenticatedUserId;
+                    this.authenticatedId = authenticateduserId;
                     var authCookie = this.authenticatedId;
                     if (accountId) {
                         this.accountId = accountId;
@@ -2010,7 +2010,7 @@ var Microsoft;
                         envelope.tags[tagKeys.userId] = userContext.id;
                     }
                     if (typeof userContext.authenticatedId === "string") {
-                        envelope.tags[tagKeys.userAuthUserId] = userContext.authenticatedId;
+                        envelope.tags[tagKeys.userAuthuserId] = userContext.authenticatedId;
                     }
                     if (typeof userContext.storeRegion === "string") {
                         envelope.tags[tagKeys.userStoreRegion] = userContext.storeRegion;
@@ -2173,7 +2173,7 @@ var Microsoft;
                 var configGetters = {
                     instrumentationKey: function () { return _this.config.instrumentationKey; },
                     accountId: function () { return _this.config.accountId; },
-                    appUserId: function () { return _this.config.appUserId; },
+                    appuserId: function () { return _this.config.appuserId; },
                     sessionRenewalMs: function () { return _this.config.sessionRenewalMs; },
                     sessionExpirationMs: function () { return _this.config.sessionExpirationMs; },
                     endpointUrl: function () { return _this.config.endpointUrl; },
@@ -2358,9 +2358,9 @@ var Microsoft;
                     ApplicationInsights._InternalLogging.throwInternalNonUserActionable(0 /* CRITICAL */, "flush failed, telemetry will not be collected: " + ApplicationInsights.Util.dump(e));
                 }
             };
-            AppInsights.prototype.setAuthenticatedUserContext = function (authenticatedUserId, accountId) {
+            AppInsights.prototype.setAuthenticatedUserContext = function (authenticateduserId, accountId) {
                 try {
-                    this.context.user.setAuthenticatedUserContext(authenticatedUserId, accountId);
+                    this.context.user.setAuthenticatedUserContext(authenticateduserId, accountId);
                 }
                 catch (e) {
                     ApplicationInsights._InternalLogging.throwInternalUserActionable(1 /* WARNING */, "Setting auth user context failed. " + ApplicationInsights.Util.dump(e));
@@ -2597,7 +2597,7 @@ var Microsoft;
                 }
                 config.endpointUrl = config.endpointUrl || "//dc.services.visualstudio.com/v2/track";
                 config.accountId = config.accountId;
-                config.appUserId = config.appUserId;
+                config.appuserId = config.appuserId;
                 config.sessionRenewalMs = 30 * 60 * 1000;
                 config.sessionExpirationMs = 24 * 60 * 60 * 1000;
                 config.maxBatchSizeInBytes = config.maxBatchSizeInBytes > 0 ? config.maxBatchSizeInBytes : 1000000;

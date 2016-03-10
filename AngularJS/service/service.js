@@ -43,7 +43,7 @@
         function updateSingleUser(user) {
 
             return $http({
-                url: 'http://emp.azurewebsites.net/api/users/' + user.UserId,
+                url: 'http://emp.azurewebsites.net/api/users/' + user.userId,
                 method: "PUT",
                 data: user,
                 headers: { 'Content-Type': 'application/json' }
@@ -110,7 +110,7 @@
         function updateSingleDept(dept) {
 
             return $http({
-                url: 'http://emp.azurewebsites.net/api/departments/' + dept.DeptId,
+                url: 'http://emp.azurewebsites.net/api/departments/' + dept.deptId,
                 method: "PUT",
                 data: dept,
                 headers: { 'Content-Type': 'application/json' }
@@ -160,7 +160,6 @@
         function getData() {
 
             return $http.get('http://emp.azurewebsites.net/api/users').then(handleSuccess, handleError('Error getting all users'));
-
 
         }
 

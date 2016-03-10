@@ -11706,10 +11706,10 @@ function $InterpolateProvider() {
      *
      * <example>
      *  <file name="index.html">
-     *    <div ng-init="username='A user'">
-     *      <p ng-init="apptitle='Escaping demo'">{{apptitle}}: \{\{ username = "defaced value"; \}\}
+     *    <div ng-init="userName='A user'">
+     *      <p ng-init="apptitle='Escaping demo'">{{apptitle}}: \{\{ userName = "defaced value"; \}\}
      *        </p>
-     *      <p><strong>{{username}}</strong> attempts to inject code which will deface the
+     *      <p><strong>{{userName}}</strong> attempts to inject code which will deface the
      *        application, but fails to accomplish their task, because the server has correctly
      *        escaped the interpolation start/end markers with REVERSE SOLIDUS U+005C (backslash)
      *        characters.</p>
@@ -21554,7 +21554,7 @@ var ISO_DATE_REGEXP = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-
 // Note: We are being more lenient, because browsers are too.
 //   1. Scheme
 //   2. Slashes
-//   3. Username
+//   3. userName
 //   4. Password
 //   5. Hostname
 //   6. Port
@@ -25674,16 +25674,16 @@ is set to `true`. The parse error is stored in `ngModel.$error.parse`.
  * in order to fulfill the validation and a status level of `4xx` in order to reject the validation.
  *
  * ```js
- * ngModel.$asyncValidators.uniqueUsername = function(modelValue, viewValue) {
+ * ngModel.$asyncValidators.uniqueuserName = function(modelValue, viewValue) {
  *   var value = modelValue || viewValue;
  *
- *   // Lookup user by username
+ *   // Lookup user by userName
  *   return $http.get('/api/users/' + value).
  *      then(function resolved() {
- *        //username exists, this means validation fails
+ *        //userName exists, this means validation fails
  *        return $q.reject('exists');
  *      }, function rejected() {
- *        //username does not exist, therefore this validation passes
+ *        //userName does not exist, therefore this validation passes
  *        return true;
  *      });
  * };

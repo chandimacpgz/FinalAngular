@@ -43,11 +43,11 @@ app.config(['$routeProvider', '$locationProvider',
               templateUrl: 'views/editDepartment.html',
               controller: 'deptController'
           }).
-          when('/EditThisUser/:UserId', {
+          when('/EditThisUser/:userId', {
               templateUrl: 'views/EditThisUser.html',
               controller: 'userController'
           }).
-          when('/EditThisDept/:DeptId', {
+          when('/EditThisDept/:deptId', {
               templateUrl: 'views/EditThisDept.html',
               controller: 'deptController'
           }).

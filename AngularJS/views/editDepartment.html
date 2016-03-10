@@ -5,14 +5,14 @@
         <table class="table table-bordered">
             <thead>
                 <tr ng-repeat="dept in alldepts">
-                    <th>{{dept.DeptId}}</th>
-                    <th>{{dept.DeptName}}</th>
-                    <th>{{dept.DeptLocation}}</th>
+                    <th>{{dept.deptId}}</th>
+                    <th>{{dept.deptName}}</th>
+                    <th>{{dept.deptLocation}}</th>
                     <td>
-                        <a href="#/EditThisDept/{{dept.DeptId}}">Edit</a>
+                        <a href="#/EditThisDept/{{dept.deptId}}">Edit</a>
                     </td>
                     <td>
-                        <input type="button" value="Delete" class="btn btn-primary" ng-click="deleteSingleDept(dept.DeptId)" />
+                        <input type="button" value="Delete" class="btn btn-primary" ng-click="deleteSingleDept(dept.deptId)" />
                     </td>
                 </tr>
             </thead>

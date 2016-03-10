@@ -25,7 +25,7 @@
         }
 
 
-        deptService.viewSingleDepartment($routeParams.DeptId).then(function (state) {
+        deptService.viewSingleDepartment($routeParams.deptId).then(function (state) {
             $scope.singleDept = state;
         });
         

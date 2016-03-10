@@ -24,13 +24,13 @@
         }
 
 
-            userService.viewSingleUser($routeParams.UserId).then(function (state) {
+            userService.viewSingleUser($routeParams.userId).then(function (state) {
                 $scope.singleUser = state.data;
             });
         
 
-        $scope.deleteSingleUser = function (username) {
-            userService.deleteSingleUser(username).then(function (state) {
+        $scope.deleteSingleUser = function (userName) {
+            userService.deleteSingleUser(userName).then(function (state) {
                 $scope.result = state.data;
             });
         }

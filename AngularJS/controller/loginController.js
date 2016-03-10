@@ -15,8 +15,8 @@
                 data = state.data;
 
                 for (var x in data) {
-                    if (($scope.username == data[x].UserName) && ($scope.password == data[x].UserPassword)) {
-                        var temp = data[x].UserRole;
+                    if (($scope.userName == data[x].userName) && ($scope.password == data[x].userPassword)) {
+                        var temp = data[x].userRole;
                         if ("admin" == temp) {
                             $location.path('/dashboard/1');
                             return 0;
@@ -32,7 +32,7 @@
 
                 }
 
-                $scope.result = "Username or password incorrect   !!!!!!";
+                $scope.result = "userName or password incorrect   !!!!!!";
 
 
             });
