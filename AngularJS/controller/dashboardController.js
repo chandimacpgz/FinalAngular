@@ -54,6 +54,10 @@
             $location.path('/editDepartment');
         }
 
+        $scope.LeaveHandle = function () {
+            $location.path('/leaveHomePage');
+        }
+
         
 
     }

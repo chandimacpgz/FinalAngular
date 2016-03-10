@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="controller\leaveController.js" />
     <Content Include="controller\loginController.js" />
     <Content Include="controller\deptController.js" />
     <Content Include="controller\userController.js" />
@@ -925,8 +926,10 @@
     <Content Include="views\EditThisDept.html" />
     <Content Include="views\EditThisUser.html" />
     <Content Include="views\editUser.html" />
+    <Content Include="views\leaveHomePage.html" />
     <Content Include="views\login.html" />
     <Content Include="views\singleUser.html" />
+    <Content Include="views\SingleUserLeave.html" />
     <Content Include="views\viewAllDepartments.html" />
     <Content Include="views\viewsSingleDepartment.html" />
     <Content Include="Web.config" />

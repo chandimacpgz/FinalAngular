@@ -51,6 +51,14 @@ app.config(['$routeProvider', '$locationProvider',
               templateUrl: 'views/EditThisDept.html',
               controller: 'deptController'
           }).
+          when('/leaveHomePage', {
+              templateUrl: 'views/leaveHomepage.html',
+              controller: 'leaveController'
+          }).
+             when('/viewUserleave', {
+                 templateUrl: 'views/SingleUserLeave.html',
+                 controller: 'leaveController'
+          }).
           
        otherwise({
             redirectTo: '/'

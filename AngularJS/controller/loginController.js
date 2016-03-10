@@ -7,7 +7,7 @@
 
     loginController.$inject = ['$location', '$scope', 'authenticate'];
 
-    function loginController($location, $scope, authenticate) {
+    function loginController($location, $scope, authenticate, $rootScope) {
         $scope.login = function () {
 
             var data = {};
@@ -17,6 +17,8 @@
                 for (var x in data) {
                     if (($scope.userName == data[x].userName) && ($scope.password == data[x].userPassword)) {
                         var temp = data[x].userRole;
+                        var thisuser = data[x];
+                        authenticate.setUser(thisuser);
                         if ("admin" == temp) {
                             $location.path('/dashboard/1');
                             return 0;

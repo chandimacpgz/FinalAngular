@@ -1,0 +1,18 @@
+﻿<h2>Employee Leave Details</h2>
+<div class="jumbotron">
+    <div class="table-responsive">
+        <h3>  Leaves Details </h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr ng-repeat="leaves in userAllUser">
+                    <th>{{leaves.reason}}</th>
+                    <th>{{leaves.status}}</th>
+                    <th>{{leaves.startPeriod}}</th>
+                    <th>{{leaves.endPeriod}}</th>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+
+    </div>
+</div>
