@@ -917,8 +917,10 @@
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="service\leaveService.js" />
     <Content Include="service\service.js" />
     <Content Include="views\addDepartment.html" />
+    <Content Include="views\addLeave.html" />
     <Content Include="views\admin.html" />
     <Content Include="views\allUsers.html" />
     <Content Include="views\createUser.html" />

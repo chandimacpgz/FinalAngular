@@ -58,6 +58,10 @@ app.config(['$routeProvider', '$locationProvider',
              when('/viewUserleave', {
                  templateUrl: 'views/SingleUserLeave.html',
                  controller: 'leaveController'
+             }).
+          when('/addLeavePage', {
+              templateUrl: 'views/addLeave.html',
+              controller: 'leaveController'
           }).
           
        otherwise({
