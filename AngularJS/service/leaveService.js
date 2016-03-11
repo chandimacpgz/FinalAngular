@@ -14,8 +14,7 @@
 
 
         function viewAllLeaves() {
-            var user=$rootScope.thisuser;
-            var id=user.userId;
+        
             return $http.get('http://emp.azurewebsites.net/api/UserLeaves/').then(handleSuccess, handleError('Error getting all users'));
         }
        

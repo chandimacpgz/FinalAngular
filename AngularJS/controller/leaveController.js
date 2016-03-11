@@ -5,8 +5,8 @@
         .module('Application')
         .controller('leaveController', leaveController);
 
-    leaveController.$inject = ['$location','$scope', 'leaveService']; 
-    function leaveController($location,$scope, leaveService) {
+    leaveController.$inject = ['$location', '$scope', 'leaveService', '$rootScope'];
+    function leaveController($location,$scope, leaveService , $rootScope) {
         //routing of the leaveHandlingHomePage
 
         $scope.viewUserLeave = function () {
@@ -17,8 +17,36 @@
         }
 
         leaveService.viewAllLeaves().then(function (state) {
-            $scope.userAllUser = state.data;
+
+            var user = $rootScope.thisuser;
+           
+
+         var newdata =  state.data.filter(function (el) {
+                return el.userID == user.userId;
+            });
+
+            $scope.userAllUser = newdata;
         });
+
+
+
+        $scope.addleave = function () {
+
+            var user = $rootScope.thisuser;
+            var leave = {};
+            leave = $scope.info;
+            leave.userID = user.userId;
+            leave.status = "Pending";
+            leaveService.addLeaveInfo(leave).then(function (state) {
+
+                $scope.result = state.data;
+            });
+
+
+        }
+
+
+        
 
     }
 
