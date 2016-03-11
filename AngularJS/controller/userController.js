@@ -8,7 +8,7 @@
     userController.$inject = ['$location', '$scope', 'userService','$routeParams'];
 
     function userController($location, $scope, userService, $routeParams) {
-
+        
             userService.viewAllUsers().then(function (state) {
                         $scope.allusers = state.data;
             });

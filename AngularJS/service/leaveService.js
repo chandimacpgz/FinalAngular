@@ -1,27 +1,25 @@
 ﻿(function () {
     'use strict';
     app.factory('leaveService', leaveService);
-
-    leaveService.$inject = ['$http'];
-
-    function leaveService($http) {
+    leaveService.$inject = ['$http','$rootScope'];
+    function leaveService($http,$rootScope) {
         var service = {};
-        service.viewLeave= viewLeave;
-        service.Leaveadd = Leaveadd;
-        
+
+
+        service.viewAllLeaves = viewAllLeaves;
+        service.addLeaveInfo = addLeaveInfo;
 
 
         return service;
 
-        function viewLeave(id) {
 
-            return $http.get('http://emp.azurewebsites.net/api/UserLeaves/' + id).then(handleSuccess, handleError('Error getting Single Department'));
-
+        function viewAllLeaves() {
+            var user=$rootScope.thisuser;
+            var id=user.userId;
+            return $http.get('http://emp.azurewebsites.net/api/UserLeaves/').then(handleSuccess, handleError('Error getting all users'));
         }
-
-
-
-        function Leaveadd(leave) {
+       
+        function addLeaveInfo(leave) {
 
             return $http({
                 url: 'http://emp.azurewebsites.net/api/UserLeaves',
@@ -31,11 +29,6 @@
             }).then(handleSuccess, handleError('Error Creating a leave'));
 
         }
-
-
-
-
-        // private fucntions 
 
         function handleSuccess(res) {
             return res;
@@ -48,9 +41,7 @@
         }
 
 
-
-
-
-
     }
+
 })();
+

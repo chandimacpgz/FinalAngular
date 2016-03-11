@@ -55,15 +55,15 @@ app.config(['$routeProvider', '$locationProvider',
               templateUrl: 'views/leaveHomepage.html',
               controller: 'leaveController'
           }).
-             when('/viewUserleave', {
+             when('/viewleave', {
                  templateUrl: 'views/SingleUserLeave.html',
                  controller: 'leaveController'
              }).
-          when('/addLeavePage', {
-              templateUrl: 'views/addLeave.html',
-              controller: 'leaveController'
-          }).
-          
+            when('/addleave', {
+                templateUrl: 'views/addLeave.html',
+                controller: 'leaveController'
+            }).
+
        otherwise({
             redirectTo: '/'
         });

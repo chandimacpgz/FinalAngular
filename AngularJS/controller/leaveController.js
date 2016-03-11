@@ -5,39 +5,21 @@
         .module('Application')
         .controller('leaveController', leaveController);
 
-    leaveController.$inject = ['$location', '$scope', '$routeParams', 'leaveService', '$rootScope', 'userService'];
+    leaveController.$inject = ['$location','$scope', 'leaveService']; 
+    function leaveController($location,$scope, leaveService) {
+        //routing of the leaveHandlingHomePage
 
-    function leaveController($location, $scope, $rootScope, $routeParams, leaveService, userService) {
+        $scope.viewUserLeave = function () {
+            $location.path('/viewleave');
+        }
+        $scope.addLeavePage = function () {
+            $location.path('/addleave');
+        }
 
+        leaveService.viewAllLeaves().then(function (state) {
+            $scope.userAllUser = state.data;
+        });
 
-                $scope.leaveUserLeave = function () {
-
-                    leaveService.viewleave(33).then(function (state) {
-                        $scope.userAllUser = state.data;
-                    });
-
-                }
-
-                $scope.viewUserLeave = function () {
-                    $location.path('/viewUserleave');
-                }
-
-           
-                $scope.addLeaveInfo = function () {
-
-                    //var leave = {};
-                    //leave = $scope.info;
-                    //leave['userId'] = 33;
-                    leaveService.Leaveadd($scope.info).then(function (state) {
-                        $scope.result = state.data;
-                    });
-                }
-
-    
-
-  
     }
-
-
 
 })();
