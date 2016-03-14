@@ -22,24 +22,41 @@
 
 
         leaveService.viewLeaves().then(function (state) {
-            //var data = state.data;
+           
             var allLeaves = state.data;
-            for (var key in allLeaves) {
-                if ((allLeaves[key].status == 'Accepted')) {
-                    allLeaves[key].infoAccept = true;
-                    allLeaves[key].infoReject = false;
-                             
+            
+         var newdata =  state.data.filter(function (el) {
+             return el.users.departments.deptId == $rootScope.thisdepartment;
+         });
+         var newdata2 = state.data.filter(function (el) {
+             return el.users.departments.deptId != $rootScope.thisdepartment;
+         });
+
+            for (var key in newdata) {
+             
+                
+                if ((newdata[key].status == 'Accepted')) {
+                    newdata[key].infoAccept = true;
+                    newdata[key].infoReject = false;
+
+                    }
+                else if ((newdata[key].status == 'Rejected')) {
+                    newdata[key].infoAccept = false;
+                    newdata[key].infoReject = true;
+                    }
+                    else {
+                    newdata[key].infoAccept = false;
+                    newdata[key].infoReject = false;
                 }
-                else if ((allLeaves[key].status == 'Rejected')) {
-                    allLeaves[key].infoAccept = false;
-                    allLeaves[key].infoReject = true;
-                }
-                else {
-                    allLeaves[key].infoAccept = false;
-                    allLeaves[key].infoReject = false;
-                }
+
+                
             }
-            $scope.allLeaves = allLeaves;
+            for (var key in newdata2) {
+                newdata2[key].infoAccept = true;
+                newdata2[key].infoReject = true;
+            }
+            var final = $.merge(newdata, newdata2);
+            $scope.allLeaves = final;
            
             
 

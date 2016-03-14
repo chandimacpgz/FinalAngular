@@ -165,6 +165,7 @@
 
         function setUser(user) {
             $rootScope.thisuser = user;
+            $rootScope.thisdepartment = user.departments.deptId;
         }
 
 

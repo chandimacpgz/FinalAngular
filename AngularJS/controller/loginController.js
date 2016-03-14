@@ -18,6 +18,8 @@
                     if (($scope.userName == data[x].userName) && ($scope.password == data[x].userPassword)) {
                         var temp = data[x].userRole;
                         var thisuser = data[x];
+                        //var thisdepartment = thisuser.departments.deptId;
+                      
                         authenticate.setUser(thisuser);
                         if ("admin" == temp) {
                             $location.path('/dashboard/1');

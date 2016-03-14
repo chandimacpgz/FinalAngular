@@ -14,8 +14,6 @@
 
         return service;
 
-
-
         function viewLeaves() {
             return $http.get('http://emp.azurewebsites.net/api/UserLeaves/').then(handleSuccess, handleError('Error getting all users'));
         }
