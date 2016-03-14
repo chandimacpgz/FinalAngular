@@ -1,5 +1,5 @@
 ﻿var app = angular.module('Application', [
-  'ngRoute'
+  'ngRoute', 'ngMaterial', 'kendo.directives'
 ]);
 
 

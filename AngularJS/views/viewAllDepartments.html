@@ -1,14 +1,7 @@
 ﻿
         <h2>Department Details</h2>
         <div class="jumbotron">
-            <table class="table table-bordered">
-                <tbody>
-                    <tr ng-repeat="dept in alldepts">
-                        <th>{{dept.deptId}}</th>
-                        <th>{{dept.deptName}}</th>
-                        <th>{{dept.deptLocation}}</th>
+            <kendo-grid options="myAllDepartments">
 
-                    </tr>
-                </tbody>
-                </table>
+            </kendo-grid>
             </div>

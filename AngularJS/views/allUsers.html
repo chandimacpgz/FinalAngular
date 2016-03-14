@@ -2,19 +2,10 @@
 <div class="jumbotron">
     <div class="table-responsive">
         
-        <table class="table table-bordered">
-            <thead>
-                <tr ng-repeat="user in allusers">
-                    <th>{{user.userId}}</th>
-                    <th>{{user.userName}}</th>
-                    <th>{{user.userNIC}}</th>
-                    <th>{{user.userEmail}}</th>
-                    <th>{{user.userRole}}</th>
-                </tr>
-            </thead>
-            
-            <tbody></tbody>
-        </table>
+
+        <kendo-grid options="mailAllUsers">
+
+        </kendo-grid>
         
     </div>
 </div>

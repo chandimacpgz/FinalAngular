@@ -94,6 +94,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\kendo.common.min.css" />
+    <Content Include="Content\kendo.default.min.css" />
     <Content Include="controller\leaveController.js" />
     <Content Include="controller\loginController.js" />
     <Content Include="controller\deptController.js" />
@@ -106,6 +108,7 @@
     </Content>
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
+    <Content Include="scripts\kendo.all.min.js" />
     <Content Include="scripts\version.json" />
     <Content Include="scripts\errors.json" />
     <Content Include="scripts\angular-touch.min.js.map" />

@@ -1,45 +1,39 @@
 ﻿<h2>Add New Employee</h2>
 <div class="jumbotron">
     <form ng-submit="createUser()" role="form">
-
-
-       
-
-        <div class="form-group">
+        <md-input-container class="md-block">
 
             <label for="name">User Name:</label>
-            <input ng-model="fields.userName" type="text" class="form-control" id="name" placeholder="Enter User Name">
+            <input ng-model="fields.userName" type="text" class="form-control" id="name" required="" autofocus="">
 
-        </div>
-        <div class="form-group">
+        </md-input-container>
+        <md-input-container class="md-block">
             <label for="pwd">Password:</label>
-            <input ng-model="fields.UserPassword" type="password" class="form-control" id="pwd" placeholder="Enter password">
-        </div>
-        <div class="form-group">
+            <input ng-model="fields.UserPassword" type="password" class="form-control" id="pwd" required="" autofocus="">
+        </md-input-container>
+        <md-input-container class="md-block">
             <label for="pwd">Email:</label>
-            <input ng-model="fields.userEmail" type="email" class="form-control" id="pwd" placeholder="Enter Email">
-        </div>
-        <div class="form-group">
+            <input ng-model="fields.userEmail" type="email" class="form-control" id="email" required="" autofocus="">
+        </md-input-container>
+        <md-input-container class="md-block">
             <label for="NIC">NIC No:</label>
-            <input ng-model="fields.userNIC" type="text" class="form-control" id="NIC" placeholder="Enter National Identity Card Number">
-        </div>
-        <div class="dropdown">
+            <input ng-model="fields.userNIC" type="text" class="form-control" id="NIC" required="" autofocus="">
+        </md-input-container>
+        <md-input-container class="md-block">
             <label for="Dname">DepartmentId:</label>
-            <input ng-model="fields.UserdeptId" type="text" class="form-control" id="NIC" placeholder="Enter Department Id">     
-        </div>
-        <br />
-        <div class="dropdown">
+            <input ng-model="fields.UserdeptId" type="text" class="form-control" id="deptID" required="" autofocus="">
+        </md-input-container>
+
+        <md-input-container class="md-block">
             <label for="Role">Role:</label>
             <select ng-model="fields.userRole" class="form-control">
                 <option selected value="admin">Admin</option>
                 <option value="manager">Manager</option>
                 <option value="viewer">Viewer</option>
             </select>
-        </div>
+        </md-input-container>
         <br />
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
 
+        <md-button class="md-warn md-raised md-hue-2" type="submit">Add</md-button>
     </form>
 </div>
