@@ -16,6 +16,36 @@
             $location.path('/addleave');
         }
 
+        $scope.AllLeave = function () {
+            $location.path('/viewLeaves');
+        }
+
+
+        leaveService.viewLeaves().then(function (state) {
+            //var data = state.data;
+            var allLeaves = state.data;
+            for (var key in allLeaves) {
+                if ((allLeaves[key].status == 'Accepted')) {
+                    allLeaves[key].infoAccept = true;
+                    allLeaves[key].infoReject = false;
+                             
+                }
+                else if ((allLeaves[key].status == 'Rejected')) {
+                    allLeaves[key].infoAccept = false;
+                    allLeaves[key].infoReject = true;
+                }
+                else {
+                    allLeaves[key].infoAccept = false;
+                    allLeaves[key].infoReject = false;
+                }
+            }
+            $scope.allLeaves = allLeaves;
+           
+            
+
+        });
+
+
         leaveService.viewAllLeaves().then(function (state) {
 
             var user = $rootScope.thisuser;
@@ -44,6 +74,20 @@
 
 
         }
+        $scope.AcceptLeave = function (form) {
+            leaveService.AcceptLeave(form).then(function (state) {
+                $scope.result = state;
+            });
+
+        }
+            $scope.RejectLeave = function (form) {
+                leaveService.RejectLeave(form).then(function (state) {
+                 $scope.result = state;
+             });
+
+        }
+
+      
 
 
         

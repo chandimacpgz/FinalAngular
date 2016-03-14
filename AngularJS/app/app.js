@@ -63,7 +63,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/addLeave.html',
                 controller: 'leaveController'
             }).
-
+             when('/viewLeaves', {
+                 templateUrl: 'views/acceptAllLeaves.html',
+                 controller: 'leaveController'
+             }).
        otherwise({
             redirectTo: '/'
         });

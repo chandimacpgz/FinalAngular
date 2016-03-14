@@ -1,0 +1,26 @@
+﻿<h2>Accept User Leaves</h2>
+<div class="jumbotron">
+    <div class="table-responsive">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr ng-repeat="leaves in allLeaves">
+
+                    <th>{{leaves.formId}}</th>
+                    <th>{{leaves.users.userId}}</th>
+                    <th>{{leaves.users.userName}}</th>
+                    <th>{{leaves.departments.deptName}}</th>
+                    <th>{{leaves.reason}}</th>
+                    <th>{{leaves.startPeriod}}</th>
+                    <th>{{leaves.endPeriod}}</th>
+                    <td><input type="button" value="Accept" class="btn btn-danger" ng-click="AcceptLeave(leaves) " ng-disabled="leaves.infoAccept" /></td>
+                    <td> <input type="button" value="Reject" class="btn btn-danger" ng-click="RejectLeave(leaves)" ng-disabled="leaves.infoReject"/></td> 
+               
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+
+    </div>
+</div>
